@@ -19,10 +19,10 @@ namespace bertoni.challenge.api.Controllers
             _albumServices = new AlbumServices();
         }
 
-        public IEnumerable<Album> Get()
+        public IHttpActionResult Get()
         {
             var albumns = _albumServices.GetAlbums();
-            return albumns;
+            return Ok(albumns);
         }
     }
 }

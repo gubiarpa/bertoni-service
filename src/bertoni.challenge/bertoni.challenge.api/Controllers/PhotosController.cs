@@ -18,10 +18,10 @@ namespace bertoni.challenge.api.Controllers
             _photoServices = new PhotoServices();
         }
 
-        public IEnumerable<Photo> Get([FromUri]Guid idAlbum)
+        public IHttpActionResult Get([FromUri]Guid idAlbum)
         {
             var albumns = _photoServices.GetPhotos(idAlbum);
-            return albumns;
+            return Ok(albumns);
         }
     }
 }
